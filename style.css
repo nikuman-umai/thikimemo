@@ -1,0 +1,201 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5; /* 灰色系の背景色 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #333;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 15px; /* コンテナのパディングを少し減らす */
+    box-sizing: border-box;
+}
+
+.login-box {
+    background-color: #fff;
+    padding: 30px; /* ボックスの内側のパディングを減らす */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    font-size: 26px; /* フォントサイズを少し小さく */
+    color: #2c3e50;
+    margin-bottom: 25px; /* 余白を少し減らす */
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 13px; /* フォントサイズを少し小さく */
+    margin-bottom: 10px; /* 余白を少し減らす */
+    display: none;
+}
+
+.form-group {
+    margin-bottom: 15px; /* 余白を減らす */
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px; /* 余白を減らす */
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px; /* 入力欄のパディングを減らす */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 15px; /* フォントサイズを少し小さく */
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #007bff;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px; /* ボタンのパディングを減らす */
+    border: none;
+    border-radius: 5% !important; /* 角丸を調整 */
+    font-size: 16px; /* フォントサイズを少し小さく */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 8px; /* デフォルトで各ボタンの上部に少し余白 */
+    text-decoration: none; /* リンクの下線を消す */
+    box-sizing: border-box; /* paddingを含めてwidth:100%になるように */
+}
+
+.btn-primary {
+    background-color: #9b9b9b;
+    color: white;
+    margin-bottom: 0;
+}
+
+.btn-primary:hover {
+    background-color: #000000;
+}
+
+/* 新規登録はこちらボタン (リンク) */
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    margin-top: 20px; /* フォームとの間隔 */
+    margin-bottom: 15px; /* パスワード忘れリンクとの間隔 */
+    display: block; /* <a>タグをブロック要素にしてwidth:100%を適用 */
+    text-align: center; /* テキストを中央揃えにする */
+    line-height: 1.5; /* テキストの縦位置を調整 (paddingと合わせて調整) */
+    padding: 10px 12px; /* ボタンと同じパディングを適用 (必要に応じて調整) */
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* ソーシャルログインボタンのコンテナ */
+.social-login-buttons {
+    margin-top: 0;
+    margin-bottom: 20px; /* 「または」の文字との間隔を確保 */
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* ボタン間のスペースを少し減らす */
+}
+
+/* ソーシャルログインボタンの基本スタイル */
+.btn-social {
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 22px;
+}
+
+.btn-social i {
+    margin: 0;
+}
+
+/* 各ソーシャルプロバイダのカラー */
+.btn-social.google {
+    background-color: #909090;
+    color: white;
+}
+.btn-social.google:hover {
+    background-color: #333333;
+}
+
+.btn-social.apple {
+    background-color: #909090;
+    color: white;
+}
+.btn-social.apple:hover {
+    background-color: #333333;
+}
+
+/* MicrosoftのスタイルはHTMLから要素が削除されるため不要になりますが、残しておいても問題ありません */
+.btn-social.microsoft {
+    background-color: #909090;
+    color: white;
+}
+.btn-social.microsoft:hover {
+    background-color: #555555;
+}
+
+/* 「または」の区切り線 */
+.divider {
+    margin: 20px 0; /* ソーシャルボタンとフォームの間の余白 */
+    position: relative;
+    text-align: center;
+    color: #888;
+    display: block;
+}
+
+.divider span {
+    background: #fff;
+    padding: 0 8px; /* パディングを少し減らす */
+    position: relative;
+    z-index: 1;
+    font-size: 14px;
+}
+
+.divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #eee; /* 線を表示 */
+    z-index: 0;
+}
+
+.links {
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+.links a {
+    color: #007bff;
+    text-decoration: none;
+    margin: 0 8px;
+    transition: color 0.3s;
+}
+
+.links a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}

@@ -14,10 +14,9 @@ const auth = firebase.auth();
 
 // DOM要素の取得
 const loginForm = document.getElementById('loginForm');
-// const registerButton = document.getElementById('registerButton'); // 削除
 const googleLoginButton = document.getElementById('googleLogin');
 const appleLoginButton = document.getElementById('appleLogin');
-const microsoftLoginButton = document.getElementById('microsoftLogin');
+// const microsoftLoginButton = document.getElementById('microsoftLogin'); // 削除
 const emailInput = document.getElementById('email');
 const passwordInput = document.getElementById('password');
 const errorMessage = document.getElementById('error-message');
@@ -92,9 +91,6 @@ loginForm.addEventListener('submit', async (e) => {
     }
 });
 
-// 新規登録処理 (ボタンからリンクに変更されたため、JavaScriptのイベントリスナーは不要)
-// registerButton.addEventListener('click', async () => { ... });
-
 // Googleログイン処理
 googleLoginButton.addEventListener('click', async () => {
     hideErrorMessage();
@@ -122,19 +118,8 @@ appleLoginButton.addEventListener('click', async () => {
     }
 });
 
-// Microsoftログイン処理
-microsoftLoginButton.addEventListener('click', async () => {
-    hideErrorMessage();
-    const provider = new firebase.auth.OAuthProvider('microsoft.com');
-    // 必要に応じてスコープなどを設定
-    // provider.addScope('user.read');
-    try {
-        const result = await auth.signInWithPopup(provider);
-        handleLoginSuccess(result.user);
-    } catch (error) {
-        handleLoginError(error, 'Microsoftログイン');
-    }
-});
+// Microsoftログイン処理 (ボタンが削除されたため、イベントリスナーも削除)
+// microsoftLoginButton.addEventListener('click', async () => { ... });
 
 // ログイン状態の監視 (オプション: ページ読み込み時にログインしているか確認する場合)
 // auth.onAuthStateChanged(user => {
