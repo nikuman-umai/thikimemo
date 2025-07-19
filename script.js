@@ -1,11 +1,12 @@
-// TODO: ここにご自身のFirebaseプロジェクトの設定情報を貼り付けてください。
+// あなたのFirebaseプロジェクトの設定情報
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT_ID.appspot.com",
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-    appId: "YOUR_APP_ID"
+    apiKey: "AIzaSyBMmpRvHLrXwwyKGi6IH4IH8IQkE3fjH7w",
+    authDomain: "ti-kimemo.firebaseapp.com",
+    projectId: "ti-kimemo",
+    storageBucket: "ti-kimemo.firebasestorage.app",
+    messagingSenderId: "190739467226",
+    appId: "1:190739467226:web:724ac64061484b92d58ee3",
+    measurementId: "G-EY72HHJD1T" // measurementIdはAuthenticationには直接影響しませんが、含めておきます
 };
 
 // Firebaseアプリの初期化
@@ -16,7 +17,6 @@ const auth = firebase.auth();
 const loginForm = document.getElementById('loginForm');
 const googleLoginButton = document.getElementById('googleLogin');
 const appleLoginButton = document.getElementById('appleLogin');
-// const microsoftLoginButton = document.getElementById('microsoftLogin'); // 削除
 const emailInput = document.getElementById('email');
 const passwordInput = document.getElementById('password');
 const errorMessage = document.getElementById('error-message');
@@ -37,7 +37,7 @@ function hideErrorMessage() {
 function handleLoginSuccess(user) {
     alert(`ログイン成功！ようこそ、${user.email || user.displayName || 'ユーザー'}さん！`);
     // ログイン後のページにリダイレクトするなどの処理をここに追加
-    // window.location.href = '/dashboard';
+    // 例: window.location.href = '/dashboard.html';
 }
 
 // エラー処理 (共通化)
@@ -91,6 +91,12 @@ loginForm.addEventListener('submit', async (e) => {
     }
 });
 
+// 新規登録処理 (メール/パスワード)
+// 新規登録ボタンがリンクになったため、JavaScriptでの直接的な登録処理は削除されています。
+// ユーザーは「新規登録はこちら」リンクをクリックして新規登録ページへ移動します。
+// その新規登録ページに、別途登録フォームとFirebaseのcreateUserWithEmailAndPasswordのロジックを実装する必要があります。
+// もしこのログインページで新規登録も完結させたい場合は、この部分のロジックを再度追加する必要があります。
+
 // Googleログイン処理
 googleLoginButton.addEventListener('click', async () => {
     hideErrorMessage();
@@ -117,9 +123,6 @@ appleLoginButton.addEventListener('click', async () => {
         handleLoginError(error, 'Appleログイン');
     }
 });
-
-// Microsoftログイン処理 (ボタンが削除されたため、イベントリスナーも削除)
-// microsoftLoginButton.addEventListener('click', async () => { ... });
 
 // ログイン状態の監視 (オプション: ページ読み込み時にログインしているか確認する場合)
 // auth.onAuthStateChanged(user => {
