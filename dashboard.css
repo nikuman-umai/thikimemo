@@ -12,16 +12,13 @@ body {
     line-height: 1.6; /* 行間を少し広げる */
 }
 
-/* dashboard.css の関連部分 */
-
 .container { /* ダッシュボード全体のコンテナ */
-    max-width: 768px; /* <-- この値を変更します */
+    max-width: 960px; /* ここを768pxから960pxに変更 */
     margin: 40px auto; /* 上下の余白と左右中央寄せ */
     padding: 25px; /* 内側の余白 */
     background-color: #fff; /* 白い背景 */
     border-radius: 12px; /* よりしっかりとした角丸 */
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* やわらかい影 */
-}
 }
 
 header {
@@ -62,7 +59,7 @@ header h1 {
 }
 
 .btn-primary { /* 主なボタン（例: 新しいメモを追加） */
-    background-color: #00b900; /* LINEグリーン */
+    background-color: "#00b900"; /* LINEグリーン */
     color: white;
 }
 

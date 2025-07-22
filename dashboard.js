@@ -17,10 +17,10 @@ const auth = firebase.auth();
 // DOM要素の取得
 const userInfoElement = document.getElementById('user-info');
 const logoutButton = document.getElementById('logout-button');
-const addNoteButton = document.getElementById('add-note-button'); // 追加
+const addNoteButton = document.getElementById('add-note-button');
 
-// ★★★ ここからLeaflet地図の初期化コードを追加 ★★★
-let map; // マップオブジェクトをグローバルに保持
+// マップオブジェクトをグローバルに保持
+let map; 
 
 // マップを初期化する関数
 function initializeMap() {
@@ -39,8 +39,6 @@ function initializeMap() {
 
     console.log("Leafletマップが初期化されました。");
 }
-// ★★★ ここまでLeaflet地図の初期化コードを追加 ★★★
-
 
 // ログイン状態の監視
 auth.onAuthStateChanged(user => {
@@ -49,7 +47,7 @@ auth.onAuthStateChanged(user => {
         console.log("ユーザーがログインしています:", user.email || user.displayName);
         userInfoElement.textContent = `ようこそ、${user.email || user.displayName || 'ユーザー'}さん！`;
         
-        // ★★★ ユーザーがログインしている場合のみ地図を初期化 ★★★
+        // ユーザーがログインしている場合のみ地図を初期化
         if (!map) { // 地図がまだ初期化されていなければ
             initializeMap();
         }

@@ -20,8 +20,23 @@
 </head>
 <body>
     <div class="container">
-        </div>
+        <header>
+            <h1>ちキメモ ダッシュボード</h1>
+            <p id="user-info">ようこそ、ゲストさん！</p>
+            <button id="logout-button" class="btn btn-secondary">ログアウト</button>
+        </header>
 
-    <script src="dashboard.js"></script> 
+        <main>
+            <h2>吉岡町の危険箇所マップ</h2>
+            <div id="mapid" style="height: 500px; width: 100%; border-radius: 8px; margin-bottom: 20px;"></div>
+            
+            <button id="add-note-button" class="btn btn-primary">新しいメモを追加</button>
+            <div id="notes-list">
+                <p>まだメモがありません。</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
 </body>
 </html>
