@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>新規登録 - My Web App</title>
+    <title>新規登録 - ちキメモ</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
@@ -28,6 +28,14 @@
                 <div class="form-group">
                     <label for="confirmPassword">パスワード（確認）</label>
                     <input type="password" id="confirmPassword" placeholder="パスワードをもう一度入力" required>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="agreeToTerms" required>
+                    <label for="agreeToTerms" class="checkbox-label">
+                        <a href="privacy.html" target="_blank">プライバシーポリシー</a>と
+                        <a href="terms.html" target="_blank">利用規約</a>に同意する
+                    </label>
                 </div>
                 <button type="submit" class="btn btn-primary">登録する</button>
             </form>
