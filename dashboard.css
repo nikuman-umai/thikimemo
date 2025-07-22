@@ -12,13 +12,16 @@ body {
     line-height: 1.6; /* 行間を少し広げる */
 }
 
+/* dashboard.css の関連部分 */
+
 .container { /* ダッシュボード全体のコンテナ */
-    max-width: 768px; /* LINEアプリのようなコンテンツ幅 */
+    max-width: 768px; /* <-- この値を変更します */
     margin: 40px auto; /* 上下の余白と左右中央寄せ */
     padding: 25px; /* 内側の余白 */
     background-color: #fff; /* 白い背景 */
     border-radius: 12px; /* よりしっかりとした角丸 */
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* やわらかい影 */
+}
 }
 
 header {
