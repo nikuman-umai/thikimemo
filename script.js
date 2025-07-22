@@ -55,8 +55,8 @@ function handleLoginSuccess(user) {
             alert('メールアドレスの確認が完了していません。サービスの一部機能が制限される場合があります。');
         }
     }
-    // ログイン後のページにリダイレクトするなどの処理をここに追加
-    // 例: window.location.href = '/dashboard.html';
+    // ログイン後のダッシュボードページにリダイレクトする
+    window.location.href = 'dashboard.html'; 
 }
 
 // エラー処理 (共通化)
@@ -138,12 +138,17 @@ appleLoginButton.addEventListener('click', async () => {
 });
 
 // ログイン状態の監視 (オプション: ページ読み込み時にログインしているか確認する場合)
-// auth.onAuthStateChanged(user => {
-//     if (user) {
-//         console.log("ユーザーがログインしています:", user.email || user.displayName);
-// ログイン済みユーザーをホーム画面にリダイレクトするなど
-window.location.href = '/dashboard';
-   　 } else {
-         console.log("ユーザーはログインしていません。");
-      }
-// });
+// この部分は、このページ(index.html)の読み込み時にユーザーが既にログインしていれば
+// 自動的にダッシュボードにリダイレクトするために使います。
+// この機能を有効にするには、以下のコメントアウトを解除してください。
+// 現在はログインフォームからの直接遷移を優先しています。
+
+auth.onAuthStateChanged(user => {
+    if (user) {
+        console.log("ユーザーがログインしています:", user.email || user.displayName);
+        // ログイン済みユーザーをダッシュボードにリダイレクト
+        window.location.href = 'dashboard.html'; 
+    } else {
+        console.log("ユーザーはログインしていません。");
+    }
+});
