@@ -1,0 +1,130 @@
+/* dashboard.css */
+
+body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, 'Noto Sans JP', sans-serif; /* 日本語フォントも考慮 */
+    background-color: #f0f2f5; /* LINEのようなライトグレーの背景 */
+    display: flex; /* ダッシュボードコンテンツを中央に配置する場合 */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #333;
+    line-height: 1.6; /* 行間を少し広げる */
+}
+
+.container { /* ダッシュボード全体のコンテナ */
+    max-width: 768px; /* LINEアプリのようなコンテンツ幅 */
+    margin: 40px auto; /* 上下の余白と左右中央寄せ */
+    padding: 25px; /* 内側の余白 */
+    background-color: #fff; /* 白い背景 */
+    border-radius: 12px; /* よりしっかりとした角丸 */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* やわらかい影 */
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    display: flex; /* Flexboxを使って要素を配置 */
+    flex-direction: column; /* 縦並び */
+    align-items: center; /* 中央寄せ */
+}
+
+header h1 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-weight: 600; /* 少し太めのフォント */
+}
+
+#user-info {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.btn { /* 汎用的なボタンのスタイル（ダッシュボードのボタンに適用） */
+    width: 100%; /* フル幅 */
+    padding: 14px;
+    border: none;
+    border-radius: 8px; /* 角丸 */
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    box-sizing: border-box;
+    display: block; /* ブロック要素にして幅を100%に */
+}
+
+.btn-primary { /* 主なボタン（例: 新しいメモを追加） */
+    background-color: #00b900; /* LINEグリーン */
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #00a000; /* 少し濃いLINEグリーン */
+    transform: translateY(-2px); /* 少し浮き上がるエフェクト */
+    box-shadow: 0 6px 15px rgba(0, 185, 0, 0.4); /* LINEグリーンの影 */
+}
+
+.btn-secondary { /* 二次的なボタン（例: ログアウト） */
+    background-color: #f0f0f0; /* ライトグレー */
+    color: #555;
+}
+
+.btn-secondary:hover {
+    background-color: #e0e0e0; /* 少し濃いライトグレー */
+    transform: translateY(-2px);
+}
+
+#logout-button {
+    width: auto; /* ボタンの幅をコンテンツに合わせる */
+    padding: 8px 15px; /* パディングを調整 */
+    font-size: 14px;
+    margin-top: 10px; /* 上部の余白 */
+    display: inline-block; /* ヘッダー内で横並びにするため */
+}
+
+main h2 {
+    font-size: 22px;
+    color: #34495e;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    font-weight: 600;
+}
+
+/* 地図表示用のdivのスタイル */
+#mapid {
+    height: 500px;
+    width: 100%;
+    border-radius: 10px; /* 角丸を適用 */
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* 影を適用 */
+}
+
+#notes-list {
+    margin-top: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+#notes-list p {
+    color: #777;
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+#add-note-button {
+    margin-top: 25px;
+    width: auto;
+    padding: 14px 30px;
+    font-size: 17px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
