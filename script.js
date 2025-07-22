@@ -36,6 +36,25 @@ function hideErrorMessage() {
 // ログイン成功時の処理 (共通化)
 function handleLoginSuccess(user) {
     alert(`ログイン成功！ようこそ、${user.email || user.displayName || 'ユーザー'}さん！`);
+    console.log("ログインユーザー:", user); // デバッグ用にユーザー情報を出力
+
+    // ユーザーがメールアドレスとパスワードでログインしており、かつメールが未確認の場合
+    // ソーシャルログイン（Google, Apple）ではemailVerifiedは通常trueになるため、メール/パスワードユーザーに限定
+    if (user.providerData.some(p => p.providerId === 'password') && user.email && !user.emailVerified) {
+        if (confirm('メールアドレスの確認が完了していません。確認メールを再送しますか？')) {
+            user.sendEmailVerification()
+                .then(() => {
+                    alert('確認メールを送信しました。メールをご確認ください。');
+                })
+                .catch((error) => {
+                    console.error("確認メールの送信に失敗しました:", error);
+                    alert('確認メールの送信に失敗しました。後でもう一度お試しください。');
+                });
+        } else {
+            // ユーザーが再送を拒否した場合の処理（例：未確認であることを表示し続ける）
+            alert('メールアドレスの確認が完了していません。サービスの一部機能が制限される場合があります。');
+        }
+    }
     // ログイン後のページにリダイレクトするなどの処理をここに追加
     // 例: window.location.href = '/dashboard.html';
 }
@@ -90,12 +109,6 @@ loginForm.addEventListener('submit', async (e) => {
         handleLoginError(error, 'ログイン');
     }
 });
-
-// 新規登録処理 (メール/パスワード)
-// 新規登録ボタンがリンクになったため、JavaScriptでの直接的な登録処理は削除されています。
-// ユーザーは「新規登録はこちら」リンクをクリックして新規登録ページへ移動します。
-// その新規登録ページに、別途登録フォームとFirebaseのcreateUserWithEmailAndPasswordのロジックを実装する必要があります。
-// もしこのログインページで新規登録も完結させたい場合は、この部分のロジックを再度追加する必要があります。
 
 // Googleログイン処理
 googleLoginButton.addEventListener('click', async () => {

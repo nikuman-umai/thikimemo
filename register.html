@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
-</head>
+    </head>
 <body>
     <div class="login-container">
         <div class="login-box">
@@ -37,17 +36,8 @@
                         <a href="terms.html" target="_blank">利用規約</a>に同意する
                     </label>
                 </div>
-                <button type="submit" class="btn btn-primary">登録する</button>
-            </form>
 
-            <form id="verifyCodeForm" style="display: none;">
-                <p>登録したメールアドレスに6桁の確認コードを送信しました。</p>
-                <div class="form-group">
-                    <label for="verificationCode">確認コード</label>
-                    <input type="text" id="verificationCode" placeholder="6桁のコードを入力" maxlength="6" required>
-                </div>
-                <button type="submit" class="btn btn-primary">コードを確認</button>
-                <button type="button" id="resendCodeBtn" class="btn btn-secondary" style="margin-top: 10px;">コードを再送</button>
+                <button type="submit" class="btn btn-primary">登録する</button>
             </form>
 
             <div class="links">
