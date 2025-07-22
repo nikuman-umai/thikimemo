@@ -37,6 +37,14 @@ h1 {
     display: none;
 }
 
+.info-message { /* 新しく追加したinfo-messageのスタイル */
+    color: #3498db;
+    font-size: 13px;
+    margin-bottom: 10px;
+    display: none;
+}
+
+
 .form-group {
     margin-bottom: 15px; /* 余白を減らす */
     text-align: left;
@@ -50,7 +58,8 @@ label {
 }
 
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+input[type="text"] { /* テキスト入力欄も追加 */
     width: 100%;
     padding: 10px; /* 入力欄のパディングを減らす */
     border: 1px solid #ddd;
@@ -62,7 +71,8 @@ input[type="password"] {
 }
 
 input[type="email"]:focus,
-input[type="password"]:focus {
+input[type="password"]:focus,
+input[type="text"]:focus { /* テキスト入力欄も追加 */
     border-color: #007bff;
 }
 
@@ -198,4 +208,92 @@ input[type="password"]:focus {
 .links a:hover {
     color: #0056b3;
     text-decoration: underline;
+}
+
+/* ★★★ チェックボックスのスタイル追加 ★★★ */
+.checkbox-group {
+    display: flex; /* チェックボックスとラベルを横並びにする */
+    align-items: center; /* 縦方向の中央揃え */
+    margin-top: 20px; /* 上部に余白 */
+    margin-bottom: 25px; /* 下部に余白 */
+    font-size: 14px; /* テキストのサイズ */
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 8px; /* チェックボックスとテキストの間のスペース */
+    width: 18px; /* チェックボックスのサイズ */
+    height: 18px; /* チェックボックスのサイズ */
+    min-width: 18px; /* flexアイテムの最小幅を設定 */
+}
+
+.checkbox-group .checkbox-label {
+    display: block; /* label全体をクリック可能にする */
+    flex-grow: 1; /* 残りのスペースを埋める */
+    line-height: 1.5; /* 行の高さ */
+    color: #555; /* テキストの色 */
+    text-align: left; /* テキストを左揃えにする */
+}
+
+.checkbox-group .checkbox-label a {
+    color: #007bff; /* リンクの色 */
+    text-decoration: none; /* リンクの下線を消す */
+}
+
+.checkbox-group .checkbox-label a:hover {
+    text-decoration: underline; /* ホバーで下線を表示 */
+}
+
+/* ★★★ プライバシーポリシー/利用規約ページのコンテナスタイル ★★★ */
+.policy-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.policy-container h1 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    text-align: center;
+}
+.policy-container h2 {
+    font-size: 22px;
+    color: #34495e;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+.policy-container p, .policy-container ul {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 15px;
+}
+.policy-container ul {
+    list-style: disc;
+    margin-left: 25px;
+    padding-left: 0;
+}
+.policy-container li {
+    margin-bottom: 8px;
+}
+.policy-container .contact-info {
+    margin-top: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+.policy-container .date-info {
+    text-align: right;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #777;
+}
+.policy-container .back-link {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 16px;
 }
