@@ -141,9 +141,9 @@ appleLoginButton.addEventListener('click', async () => {
 // auth.onAuthStateChanged(user => {
 //     if (user) {
 //         console.log("ユーザーがログインしています:", user.email || user.displayName);
-//         // ログイン済みユーザーをホーム画面にリダイレクトするなど
-//         // window.location.href = '/dashboard';
-//     } else {
-//         console.log("ユーザーはログインしていません。");
-//     }
+// ログイン済みユーザーをホーム画面にリダイレクトするなど
+window.location.href = '/dashboard';
+   　 } else {
+         console.log("ユーザーはログインしていません。");
+      }
 // });
