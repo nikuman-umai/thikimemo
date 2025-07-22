@@ -297,3 +297,78 @@ input[type="text"]:focus { /* テキスト入力欄も追加 */
     margin-top: 30px;
     font-size: 16px;
 }
+/* style.css の任意の場所に追加 */
+
+.container {
+    max-width: 900px; /* ダッシュボードのコンテンツ幅を少し広げる */
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+header h1 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+#user-info {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+#logout-button {
+    width: auto; /* ボタンの幅をコンテンツに合わせる */
+    padding: 8px 15px; /* パディングを調整 */
+    font-size: 14px;
+    margin-top: 10px; /* 上部の余白 */
+    display: inline-block; /* ヘッダー内で横並びにするため */
+}
+
+main h2 {
+    font-size: 22px;
+    color: #34495e;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+/* ★★★ 地図表示用のdivのスタイル ★★★ */
+#mapid {
+    height: 500px; /* 地図の高さを設定 */
+    width: 100%; /* 幅は親要素に合わせる */
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* 地図に影を追加 */
+}
+
+#notes-list {
+    margin-top: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+#notes-list p {
+    color: #777;
+    text-align: center;
+}
+
+#add-note-button {
+    margin-top: 20px;
+    width: auto;
+    padding: 12px 25px;
+    font-size: 16px;
+    display: block; /* 中央寄せのため */
+    margin-left: auto;
+    margin-right: auto;
+}

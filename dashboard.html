@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ダッシュボード - ちキメモ</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIINfBIJP7GBOcy0ayWFGyeRNzY4LPwaqZs="
+     crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nEFhKUtWTzXzZzS2q/mN59C/y+z5Jb6R09uD0uJzI="
+     crossorigin=""></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+    </head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ちキメモ ダッシュボード</h1>
+            <p id="user-info">ようこそ、ゲストさん！</p>
+            <button id="logout-button" class="btn btn-secondary">ログアウト</button>
+        </header>
+
+        <main>
+            <h2>吉岡町の危険箇所マップ</h2>
+            <div id="mapid" style="height: 500px; width: 100%; border-radius: 8px; margin-bottom: 20px;"></div>
+            <button id="add-note-button" class="btn btn-primary">新しいメモを追加</button>
+            <div id="notes-list">
+                <p>まだメモがありません。</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
